@@ -1,3 +1,4 @@
+require('dotenv').config();
 const passport = require('passport');
 const DiscordStrategy = require('passport-discord').Strategy;
 const createConnextion = require('../../../base/mysql');
@@ -15,9 +16,9 @@ var prompt = 'consent'
 
 passport.use(
     new DiscordStrategy({
-        clientID: '824375271896645642',
-        clientSecret: 'dUF22IKEM52WhG7Zrb1ASIvwoOintb4U',
-        callbackURL: 'https://www.discord-eclipse.xyz/api/auth/discord/redirect',
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: process.env.CALLBACK_URL,
         scope: scopes,
         prompt: prompt
     }, function(accessToken, refreshToken, profile, done) {
