@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>⚙ | Auto'Giveaways</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="/css/buy.css" rel="stylesheet"/>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description" content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+	    <meta itemprop="image" content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+
+        <meta name="theme-color" content="#5c7aff">
+        <link rel="publisher" href=location>
+        <meta name="author" content="Auto'Giveaways">
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta itemprop="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Search Engine -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta name="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Auto'Giveaways">
+        <meta name="twitter:description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <!-- google search  -->
+        <meta name="theme-color" content="#5c7aff">
+        <link rel="publisher" href=location>
+        <meta name="author" content="Auto'Giveaways">
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta itemprop="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+        <meta property="og:title" content="Auto'Giveaways">
+        <meta property="og:url" content="https://discord-eclipse.xyz" />
+        <meta name="og:title" content="Auto'Giveaways">
+        <meta name="og:description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta name="og:image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <meta name="og:url" content=location>
+        <meta name="og:site_name" content="Auto'Giveaways">
+        <meta name="og:type" content="website">
+    </head>
+    <body>
+        <br>
+        <br>
+        <div class="sign-up-modal">
+            <div class="logo-container">
+                <svg class="logo" width="94.4px" height="56px">
+                    <g>
+                        <polygon points="49.3,56 49.3,0 0,28 	" />
+                        <path d="M53.7,3.6v46.3l40.7-23.2L53.7,3.6z M57.7,10.6l28.4,16.2L57.7,42.9V10.6z" />
+                    </g>
+                </svg>
+            </div>
+            <form class="details">
+                <div class="input-container">
+                    <h4>Vous êtes connectés en tant que <code style="color: rgb(99, 143, 224)"><%= user.username %>#<%= user.discriminator %></code>. <a href="https://discord-eclipse.xyz/api/auth/discord">Ce n'est pas vous ?</a></h4>
+                </div>
+                <div class="input-container">
+                    <select id="formula">
+                        <option value="1">Formule #1</option>
+                        <option value="2">Formule #2</option>
+                        <option value="3">Formule #3</option>
+                        <option value="4">Formule #4</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <select id="guild">
+                        <% client.guilds.cache.forEach(g => { %>
+                            <option value="<%= g.id %>"><code style="color: rgb(99, 143, 224)"><%= g.name %><code></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <button type="button" class="submit" id="checkout-button">Payer</button>
+            </form>
+        </div>
+    </body>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+        var stripe = Stripe("pk_live_51IYZXyBEYjrGtCh0fhq2sctle6nYauoLIu9W1xKUFkLmYgsOSMfDboS4aghvgjVcmhlMJbbgWhVrdKwLdZMoOj3x00sApXKrW3");
+        var checkoutButton = document.getElementById("checkout-button");
+        checkoutButton.addEventListener("click", function () {
+            checkoutButton.style.display = "none"
+            fetch("/payement", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    formula: document.getElementById("formula").value,
+                    guild: document.getElementById("guild").value
+                })
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (session) {
+                console.log(session.link)
+                window.location.assign(session.link)
+            })
+        });
+      </script>
+</html>

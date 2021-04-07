@@ -1,0 +1,194 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+
+/*
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+* {
+    font-family: "Raleway";
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    color: transparent;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d0d0d1; 
+    border-radius: 10px;
+}
+
+a#important {
+    color: #ff7575;
+}
+
+code#light-blue {
+    color: #93a7ff;
+}
+
+code#red {
+    color: #ff7575;
+}
+
+code#channel-name {
+    color: #ffb593;
+}
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+.navbar {
+    background: #5c7aff;
+    height: 100px;
+    width: 1920px;
+    border-radius: 25px;
+    display: flex;
+}
+
+.navbar-separator {
+    background: whitesmoke;
+    height: 100px;
+    width: 5px;
+    margin-left: 28px;
+    border-radius: 75px;
+    display: flex;
+}
+
+h2.navbar-text {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 2em;
+    margin-top: 1.5em;
+    color: white;
+}
+
+#logo {
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 25px;
+}
+
+.shop {
+    margin-left: 300px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+.invisible {
+    color: #1f1f20;
+    background: #1f1f20;
+}
+
+.buy {
+    margin-left: 160px;
+    margin-top: 30px;
+    width: 70px;
+    height: 50px;
+    border-radius: 15px;
+    background: #1f1f20;
+    color: #ff7575;
+}
+
+.shop-div {
+    margin-top: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shop2 {
+    margin-left: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shop-item {
+    border-radius: 25px;
+    height: 200px;
+    width: 400px;
+    background: #1f1f20;
+}
+
+.shop-formula-first {
+    color: white;
+    margin-left: 175px;
+}
+
+.shop-desc {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+/* Buy */
+
+.form-buy {
+    display: flex;
+}
+
+.input {
+    width: 300px;
+    border-radius: 25px;
+    border-color: transparent;
+    display: flex;
+}
+
+.select {
+    width: 300px;
+    border-radius: 25px;
+    border-color: transparent;
+    display: flex;
+}
+
+.submit {
+    width: 100px;
+    border-radius: 25px;
+    border-color: #1f1f20;
+    vertical-align: middle;
+    display: flex;
+}

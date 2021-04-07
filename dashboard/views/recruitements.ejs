@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>⚙ | Auto'Giveaways</title>
+        <link href="/css/rc.css" rel="stylesheet"/>
+
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description" content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+	    <meta itemprop="image" content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+
+        <meta name="theme-color" content="#5c7aff">
+        <link rel="publisher" href=location>
+        <meta name="author" content="Auto'Giveaways">
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta itemprop="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Search Engine -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta name="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Auto'Giveaways">
+        <meta name="twitter:description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <!-- google search  -->
+        <meta name="theme-color" content="#5c7aff">
+        <link rel="publisher" href=location>
+        <meta name="author" content="Auto'Giveaways">
+        <meta itemprop="name" content="Auto'Giveaways">
+        <meta itemprop="description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta itemprop="image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+        <meta property="og:title" content="Auto'Giveaways">
+        <meta property="og:url" content="https://discord-eclipse.xyz" />
+        <meta name="og:title" content="Auto'Giveaways">
+        <meta name="og:description"
+            content="Auto'Giveaways - Buy giveaways and get a lot of members on your server.">
+        <meta name="og:image"
+            content="https://images-ext-1.discordapp.net/external/MnLvxHRUMBP6nRsiRqip35Lz7pDCXqsmlfNbqQQDwYM/https/cdn.discordapp.com/icons/783112936611643393/bf97e066d506f7e349e875de6f5af337.webp">
+        <meta name="og:url" content=location>
+        <meta name="og:site_name" content="Auto'Giveaways">
+        <meta name="og:type" content="website">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- multistep form -->
+        <form id="msform" method="post" action="/shop">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Informations personnelles</li>
+                <li>A propos</li>
+                <li>Finalisation</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <h2 class="fs-title">Informations</h2>
+                <h3 class="fs-subtitle">Ceci est l'étape la plus importante</h3>
+                <input type="text" id="user" name="email" placeholder="Identifiant discord" required/>
+                <input type="text" id="prenom" name="pass" placeholder="Prénom" required/>
+                <input type="text" id="age" name="cpass" placeholder="Âge" required/>
+                <br>
+                <hr>
+                <br>
+                <h2 class="fs-title">A propos</h2>
+                <h3 class="fs-subtitle">Montrez-nous ici tout ce que vous savez faire</h3>
+                <textarea type="text" id="qualites" name="twitter" placeholder="Qualités" required></textarea>
+                <textarea type="text" id="defauts" name="facebook" placeholder="Défauts" required></textarea>
+                <textarea type="text" id="exp" name="gplus" placeholder="Expérience" required></textarea>
+                <textarea type="text" id="motiv" name="gplus" placeholder="Motivations" required></textarea>
+                <br>
+                <hr>
+                <br>
+                <h2 class="fs-title">Finalisation</h2>
+                <h3 class="fs-subtitle">Quelque chose à ajouter ? Mettez le ici.</h3>
+                <textarea type="text" id="add" name="gplus" placeholder="Quelque chose à ajouter ?"></textarea>
+                <button type="button" id="submit" class="submit action-button">Envoyer</button>
+            </fieldset>
+        </form>
+    </body>
+    <script>
+        var checkoutButton = document.getElementById("submit");
+        checkoutButton.addEventListener("click", function () {
+            fetch("/shop", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    user: document.getElementById("user").value,
+                    prenom: document.getElementById("prenom").value,
+                    age: document.getElementById("age").value,
+                    qualites: document.getElementById("qualites").value,
+                    defauts: document.getElementById("defauts").value,
+                    exp: document.getElementById("exp").value,
+                    motiv: document.getElementById("motiv").value,
+                    add: document.getElementById("add").value,
+                })
+            })
+        });
+    </script>
+</html>
