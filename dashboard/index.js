@@ -1,3 +1,4 @@
+require('dotenv').config()
 require('./routers/strategies/discord')
 const express = require('express');
 const app = express();
@@ -11,11 +12,11 @@ exports.run = async (client) => {
     const MySQLStore = require('express-mysql-session')(session);
 
     const options = {
-        host: 'localhost',
-        port: 3306,
-        user: 'root',
-        password: 'pm&!aklow2021',
-        database: 'spacegiveaways'
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASS,
+        database: process.env.DB_NAME
     };
 
     app
