@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require('express');
-const stripe = require('stripe')('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');
 const router = express.Router();
 const paypal = require('paypal-rest-sdk');
 
