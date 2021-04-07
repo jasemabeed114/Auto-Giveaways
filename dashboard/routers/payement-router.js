@@ -1,12 +1,13 @@
+require('dotenv').config()
 const express = require('express');
 const stripe = require('stripe')('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');
 const router = express.Router();
 const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
-    'mode': 'live',
-    'client_id': 'AUidZSC5g9XquT_c34MEPUi5y65PR0uuNjZ2rve2smEZHj3A9dYeL2Cmpu-0Y9wYostcqzrdPBTVTDh_',
-    'client_secret': 'EK098sD4Q2GzLDJf8py9oQ0w-yxqaaxT3AjP_I73YelgOfiGPMcyM2o9G6PUiuqcasUOuSR9t6a-DeTs'
+    'mode': process.env.PAYPAL_MODE,
+    'client_id': process.env.PAYPAL_ID,
+    'client_secret': process.env.PAYPAL_SECRET
 });
 
 router.post('/', async (req, res, next) => {
